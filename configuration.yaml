@@ -114,5 +114,4 @@ media_player:
       sources:
         - livetv
         - youtube
-        - makotv
         - netflix
