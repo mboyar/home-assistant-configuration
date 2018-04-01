@@ -82,9 +82,9 @@ camera:
     password: !secret cam1_pass
 
 mqtt:
-  broker: mqtt1_broker
-  username: mqtt1_user
-  password: mqtt1_pass
+  broker: !secret mqtt1_broker
+  username: !secret mqtt1_user
+  password: !secret mqtt1_pass
 
 device_tracker:
   - platform: owntracks
