@@ -14,7 +14,7 @@ homeassistant:
   customize: !include customize.yaml
 
 # Show links to resources in log and frontend
-introduction:
+#introduction:
 
 # Enables the frontend
 frontend:
@@ -24,9 +24,9 @@ config:
 
 http:
   # Secrets are defined in the file secrets.yaml
-  api_password: !secret http_password
-  ssl_certificate: /home/homeassistant/.homeassistant/certificate.pem
-  ssl_key: /home/homeassistant/.homeassistant/privkey.pem
+  # api_password: !secret http_password
+  # ssl_certificate: /home/homeassistant/.homeassistant/certificate.pem
+  # ssl_key: /home/homeassistant/.homeassistant/privkey.pem
   # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
   # base_url: example.duckdns.org:8123
 
@@ -40,7 +40,7 @@ updater:
   # include_used_components: true
 
 # Discover some devices automatically
-discovery:
+#discovery:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -57,10 +57,6 @@ map:
 # Track the sun
 sun:
 
-# Weather prediction
-sensor:
-  - platform: yr
-
 # Text to speech
 tts:
   - platform: google
@@ -73,13 +69,19 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 
 ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
 
 camera:
-  - platform: onvif
-    host: !secret cam1_host
-    port: !secret cam1_port
-    username: !secret cam1_user
-    password: !secret cam1_pass
+  - platform: ffmpeg
+    input: !secret cam1_rtsp
+
+
+#camera:
+#  - platform: onvif
+#    host: !secret cam1_host
+#    port: !secret cam1_port
+#    username: !secret cam1_user
+#    password: !secret cam1_pass
 
 mqtt:
   broker: !secret mqtt1_broker
@@ -115,3 +117,37 @@ media_player:
         - livetv
         - youtube
         - netflix
+        - HDMI3
+
+light:
+  - platform: yeelight
+    devices:
+      !secret ip_yeelight:
+        name: Salon
+        transition: 1000
+        use_music_mode: True #(defaults to False)
+        #save_on_change: False #(defaults to True)
+
+sensor:
+  - platform: etherscan
+    address: !secret eth_asusk53s
+    name: AsusK53S Hesap
+  - platform: etherscan
+    address: !secret eth_beaglebone
+    name: Beaglebone Hesap
+  - platform: coinmarketcap
+    currency: Ethereum
+    display_currency: TRY
+  
+  # Weather prediction
+  - platform: yr
+    monitored_conditions:
+      - temperature
+      - symbol
+      - windSpeed
+      - pressure
+      - windDirection
+      - humidity
+      - fog
+      - cloudiness
+

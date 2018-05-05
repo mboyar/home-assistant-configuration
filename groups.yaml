@@ -1,0 +1,18 @@
+#default_view:
+#  entities: [group.family_members, group.weather]
+#  icon: mdi:home
+
+family_members:
+  entities: [device_tracker.hass_mp1s3gss, device_tracker.hass_asust00f]
+  name: Ailem Nerede
+  icon: mdi:home
+
+weather:
+  entities: [sun.sun, sensor.yr_symbol, sensor.yr_temperature, sensor.yr_humidity, sensor.yr_pressure, sensor.yr_wind_speed, sensor.yr_wind_direction, sensor.yr_cloudiness, sensor.yr_fog]
+  name: Hava Durumu
+  icon: mdi:weather-partlycloudy
+
+blockchain:
+  entities: [sensor.asusk53s_hesap, sensor.beaglebone_hesap, sensor.ethereum]
+  name: Ethereum
+  icon: mdi:ethereum
