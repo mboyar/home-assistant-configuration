@@ -1,0 +1,7 @@
+secrets.yaml
+
+webostv.conf
+home-assistant.log
+known_devices.yaml
+**.pem
+**.mp3

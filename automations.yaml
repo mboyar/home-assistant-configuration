@@ -1,1 +1,42 @@
-[]
+- action:
+  - data:
+      entity_id: light.salon
+      rgb_color:
+      - 108
+      - 108
+      - 255
+    service: light.turn_on
+  alias: netflight-1
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  id: '1525574041298'
+  trigger:
+  - entity_id: sensor.living_room_tv_source
+    platform: state
+    to: Netflix
+- action:
+  - data:
+      entity_id: light.salon
+    service: light.turn_off
+  alias: lightoff-1
+  condition: []
+  id: '1525575561512'
+  trigger:
+  - event: sunrise
+    platform: sun
+- action:
+  - data:
+      entity_id: light.salon
+      rgb_color:
+      - 255
+      - 200
+      - 145
+    service: light.turn_on
+  alias: lighton-1
+  condition: []
+  id: '1525575949192'
+  trigger:
+  - event: sunset
+    platform: sun

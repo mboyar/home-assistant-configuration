@@ -117,7 +117,7 @@ media_player:
         - livetv
         - youtube
         - netflix
-        - HDMI3
+        - HDMI4
 
 light:
   - platform: yeelight
@@ -137,7 +137,7 @@ sensor:
     name: Beaglebone Hesap
   - platform: coinmarketcap
     currency: Ethereum
-    display_currency: TRY
+    display_currency: USD
   
   # Weather prediction
   - platform: yr
@@ -151,3 +151,9 @@ sensor:
       - fog
       - cloudiness
 
+  # Thx to https://community.home-assistant.io/t/using-the-lg-webos-source-value-to-trigger-events/4013/4
+  - platform: template
+    sensors:
+      living_room_tv_source:
+        value_template: '{{ states.media_player.lg_webos_smart_tv.attributes["source"] }}'
+        friendly_name: 'LG TV Source'
