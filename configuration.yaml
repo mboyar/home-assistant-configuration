@@ -130,14 +130,32 @@ light:
 
 sensor:
   - platform: etherscan
-    address: !secret eth_asusk53s
-    name: AsusK53S Hesap
+    address: !secret eth_asusk53s-main-1
+    name: Ana Hesap-1
   - platform: etherscan
-    address: !secret eth_beaglebone
-    name: Beaglebone Hesap
+    address: !secret eth_asusk53s-main-2
+    name: Ana Hesap-2
+  - platform: etherscan
+    address: !secret eth_beaglebone-main-1
+    name: Beaglebone Hesap-1
+  - platform: etherscan
+    address: !secret eth_metamask-main-1
+    name: Metamask Hesap-1
   - platform: coinmarketcap
     currency: Ethereum
     display_currency: USD
+  - platform: alpha_vantage
+    api_key: !secret apikey_alpha_vantage
+    foreign_exchange:
+    - name: USD_TRY
+      from: USD
+      to: TRY
+  - platform: alpha_vantage
+    api_key: !secret apikey_alpha_vantage
+    foreign_exchange: 
+    - name: EUR_TRY
+      from: EUR
+      to: TRY
   
   # Weather prediction
   - platform: yr

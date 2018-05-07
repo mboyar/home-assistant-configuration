@@ -13,6 +13,6 @@ weather:
   icon: mdi:weather-partlycloudy
 
 blockchain:
-  entities: [sensor.asusk53s_hesap, sensor.beaglebone_hesap, sensor.ethereum]
-  name: Ethereum
+  entities: [sensor.ana_hesap1, sensor.ana_hesap2, sensor.beaglebone_hesap1, sensor.metamask_hesap1, sensor.ethereum, sensor.usd_try, sensor.eur_try]
+  name: Finans
   icon: mdi:ethereum
