@@ -40,7 +40,17 @@
   trigger:
   - event: sunset
     platform: sun
-- action:
+- id: '1525632856687'
+  alias: netflight-2
+  trigger:
+  - entity_id: sensor.living_room_tv_source
+    from: Netflix
+    platform: state
+  condition:
+  - condition: state
+    entity_id: sun.sun
+    state: below_horizon
+  action:
   - data:
       entity_id: light.salon
       rgb_color:
@@ -48,10 +58,3 @@
       - 200
       - 145
     service: light.turn_on
-  alias: netflight-2
-  condition: []
-  id: '1525632856687'
-  trigger:
-  - entity_id: sensor.living_room_tv_source
-    from: Netflix
-    platform: state

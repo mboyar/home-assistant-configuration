@@ -1,0 +1,16 @@
+sensor.living_room_tv_source:
+  hidden: true
+sensor.ethereum:
+  icon: mdi:ethereum
+device_tracker.rpn12:
+  hidden: true
+device_tracker.androidb57ef94a7d0f6063:
+  hidden: true
+device_tracker.beaglebone:
+  hidden: true
+device_tracker.muratk53sd:
+  hidden: true
+device_tracker.myhomemynet:
+  hidden: true
+device_tracker.yeelinklightcolor1_miio77634901:
+  hidden: true
